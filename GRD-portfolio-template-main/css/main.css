@@ -1,0 +1,322 @@
+@import url(./reset.css);
+/* Set the desired font from google fonts, or adobe fonts here */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* GLOBALS */
+body{
+    background-color: rgb(255, 255, 255, 1.00);
+    font-family: "Roboto", sans-serif;
+    /* 
+    100,400,700,900 weights available. Add differrent 
+    weights to the classes or elements that are needed 
+     */
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(0,0,0);
+}
+
+
+/* Ensure the entire page has no padding or margin and fills the screen */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+     /* overflow: hidden; Prevents scrolling */
+    }
+
+    /* Container to hold the video and any overlay content */
+    .video-background {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Styling for the iframe to make it cover the full screen */
+    .video-background iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;  /* Full viewport width */
+      height: 100vh;  /* Full viewport height */
+      transform: translate(-50%, -50%); /* Center the video */
+      z-index: -1; /* Keeps video in the background */
+      pointer-events: none; /* Prevents clicking on the video */
+    }
+
+    /* Content overlay (optional) */
+    .content-overlay {
+      position: relative;
+      z-index: 1; /* Ensures content is above the video */
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5em;
+    }
+
+
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+p{
+    margin:10px 50px 10px 0px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-weight: 900;
+    text-align: center;
+    font-size: 2rem;
+}
+
+h2{
+    font-size:1.2rem;
+    font-weight: 900;
+    margin-bottom:10px;
+}
+
+h2 + ul {
+    list-style-type: circle;
+    margin-bottom:10px;
+}
+
+h2 + ul > li {
+    margin-left:30px;
+}
+
+hr{
+    width:100%;
+}
+
+
+.be::before, .em::before, .insta::before, .twitter::before{
+    display: inline-block;
+    position: relative;
+    content: "";
+    width: 25px;
+    height: 25px;
+    top: 7px;
+    background-repeat: no-repeat;
+}
+
+/*
+.be::before{
+    background-image: url(../img/ico/behance-solid.svg);
+   
+}
+*/
+
+.em::before{
+    background-image: url(../img/ico/envelope-solid.svg);
+
+}
+.insta::before{
+    background-image: url(../img/ico/instagram-solid.svg);
+}
+
+.twitter::before{
+    background-image: url(../img/ico/twitter.svg);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    padding:10px;
+  }
+
+/* LAYOUT */
+
+.full-page-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+/*    background-color: rgb(255,172,111);*/
+    background-position: center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero{
+    background-image: url(../img/placeholder.png);
+}
+
+#hero > ul {
+    position: absolute;
+    bottom:25px;
+}
+
+#hero > ul > li {
+    display:inline;
+    margin:0 5px 0 5px;
+}
+
+#about-intro{
+/*    background-image: url(../img/placeholder.png);*/
+}
+
+#intro-text > p, #intro-text >h2{
+    position: relative;
+    top:200px;
+    width:600px;
+}
+
+#category-selection{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%; /* Adjust based on design */
+    margin:0 auto;
+    height:100vh;
+	background-color: rgb(216,178,134);
+}
+
+.category-card {
+    width: 100%;
+    max-width: 250px;
+    margin: 25px;
+    min-height: 400px;
+    max-height: 400px;
+    border: 1px solid white;
+}
+
+#projects-header {
+	padding-bottom: 50px;
+}
+
+.projects {
+	
+}
+
+.project-info{
+    position:relative;
+    top:300px;
+    left:50px;
+}
+
+
+#project-1 {
+    background-image: url(../img/placeholder.png);
+}
+
+
+#back_to_top{
+	display: inline-block;
+	width:80px;
+	height:50px;
+	line-height: 50px;
+	text-align: center;
+	background-color:rgb(135,160,0);
+	cursor: pointer;
+	position:fixed;
+	z-index: 100;
+	bottom:50px;
+	right:100px;
+	justify-content: center;
+	
+}
+
+/*
+.portfolio-button {
+	justify-content: center
+}
+*/
+
+
+
+/* tag colors */
+
+.green{
+    background-color:rgba(100, 125, 50, 1);
+
+}
+
+.tag {
+    display: inline-block;
+    /* border:1px solid white; */
+    padding:5px 15px 5px 15px;
+    border-radius:25px;
+}
+
+
+	.shadow-pop-tr:hover{
+		animation-play-state: running;
+		cursor: pointer;
+		animation-play-state: paused;
+	
+	-webkit-animation: shadow-pop-tr 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: shadow-pop-tr 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+	.shadow-pop-tr:hover{
+		animation-play-state: running
+	}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-11-11 11:5:31
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shadow-pop-tr
+ * ----------------------------------------
+ */
+@-webkit-keyframes shadow-pop-tr {
+  0% {
+    -webkit-box-shadow: 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff;
+            box-shadow: 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-box-shadow: 1px -1px #ffffff, 2px -2px #ffffff, 3px -3px #ffffff, 4px -4px #ffffff, 5px -5px #ffffff, 6px -6px #ffffff, 7px -7px #ffffff, 8px -8px #ffffff;
+            box-shadow: 1px -1px #ffffff, 2px -2px #ffffff, 3px -3px #ffffff, 4px -4px #ffffff, 5px -5px #ffffff, 6px -6px #ffffff, 7px -7px #ffffff, 8px -8px #ffffff;
+    -webkit-transform: translateX(-8px) translateY(8px);
+            transform: translateX(-8px) translateY(8px);
+  }
+}
+@keyframes shadow-pop-tr {
+  0% {
+    -webkit-box-shadow: 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff;
+            box-shadow: 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff, 0 0 #ffffff;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+       -webkit-box-shadow: 1px -1px #ffffff, 2px -2px #ffffff, 3px -3px #ffffff, 4px -4px #ffffff, 5px -5px #ffffff, 6px -6px #ffffff, 7px -7px #ffffff, 8px -8px #ffffff;
+            box-shadow: 1px -1px #ffffff, 2px -2px #ffffff, 3px -3px #ffffff, 4px -4px #ffffff, 5px -5px #ffffff, 6px -6px #ffffff, 7px -7px #ffffff, 8px -8px #ffffff;
+    -webkit-transform: translateX(-8px) translateY(8px);
+            transform: translateX(-8px) translateY(8px);
+  }
+}
+
+
+
+
